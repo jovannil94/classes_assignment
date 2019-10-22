@@ -181,13 +181,46 @@ const today = new Date();
 // console.log(postObjs[0].postedToday());
 // console.log(postObjs.filter((post) => post.postedToday()));
 
-// PROBLEM 9
-class Car {
-    constructor(make, model) {
+// QUESTION 9 && 10
+class Vehicle {
+    constructor(color, name) {
+        this.color = color;
+        this.name = name;
+    }
+    makeSound() {
+        return "WHHOOSSSH";
+    }
+}
+
+class Car extends Vehicle{
+    constructor(name, color, make, model) {
+        super(name, color);
         this.make = make;
         this.model = model;
+    }
+    static numberofWheels() {
+        return 4;
     }
 }
 
 let mustang = new Car("Ford", "Mustang");
-let mkz = new Car("Lincoln", "MKZ");
+
+class Bike extends Vehicle{
+    constructor(name, color, gears, hasBells) {
+        super(name, color);
+        this.gears = gears;
+        this.hasBells = hasBells;
+    }
+    static numberofWheels() {
+        return 2;
+    }
+}
+
+let mongoose = new Bike(21 , false);
+
+let bikey = new Bike("green", "Bikey McBikeface")
+console.log(bikey);
+
+
+let carry = new Car("red", "Carry McCarface", "Ford", "Mustang");
+console.log(carry);
