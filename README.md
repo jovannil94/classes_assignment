@@ -81,7 +81,7 @@ console.log(v1.minus(v2));
 
 var v3 = new Vector(3, 4)
 console.log(v3.getLength());
-// => 5
+// => 25
 ```
 ## Question 7
 

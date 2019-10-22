@@ -111,3 +111,83 @@ class Movie {
 }
 let laLaLand = new Movie("La La Land", 2016, "Musical", ["Ryan Gosling", "Emma Stone"], "Musical taking place in LA between two lovers")
 console.log(laLaLand.blurb())
+
+
+//PROBLEM 6
+class Vector {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    plus(vector) {
+        return new Vector(this.x + vector.x, this.y + vector.y);
+    }
+    minus(vector) {
+        return new Vector(this.x + (vector.x * -1), this.y + (vector.y * -1));
+    }
+    getLength() {
+        return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+    }
+}
+
+let vector1 = new Vector(3, 4);
+let vector2 = new Vector(5, 6);
+// console.log(vector1.plus(vector2));
+// console.log(vector1.minus(vector2));
+// console.log(vector1.getLength());
+
+// Problem 7
+class Cylinder {
+    constructor(radius, height) {
+        this.radius = radius;
+        this.height = height;
+    }
+    getVolume() {
+        return (Math.PI) * (Math.pow(this.radius, 2)) * this.height;
+    }
+    getSurfaceArea() {
+        return 2 * (Math.PI) * (this.radius) * (this.radius + this.height);
+    }
+}
+
+let cyl1 = new Cylinder(4, 4);
+// console.log(cyl1.getSurfaceArea());
+
+// Problem 8
+class Post {
+    constructor(datePosted, user, text) {
+        this.datePosted = datePosted;
+        this.user = user;
+        this.text = text;
+    }
+    postedToday() {
+        const today = new Date();
+        if(this.datePosted.getDate() === today.getDate()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+let postObjs = [
+    new Post(new Date(2019, 10, 21), "Flower", "I like the smell of roses"),
+    new Post(new Date(2019, 10, 21), "IDontLikeFlower", "I don't."),
+    new Post(new Date(2019, 10, 23), "Flower?", "Who cares?")
+]
+
+const today = new Date();
+
+// console.log(postObjs[0].postedToday());
+// console.log(postObjs.filter((post) => post.postedToday()));
+
+// PROBLEM 9
+class Car {
+    constructor(make, model) {
+        this.make = make;
+        this.model = model;
+    }
+}
+
+let mustang = new Car("Ford", "Mustang");
+let mkz = new Car("Lincoln", "MKZ");
